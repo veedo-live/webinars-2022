@@ -1,0 +1,5 @@
+prosodyctl register martin gpl-conference.veedo.live lysialos8
+prosodyctl register joshua gpl-conference.veedo.live cisenang7
+prosodyctl register solly gpl-conference.veedo.live ishrimba4
+
+

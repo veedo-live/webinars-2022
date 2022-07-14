@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EdTech Summit Africa 2022 - #datafree</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="600" >
+    <link rel="icon" type="image/png" href="/img/veedo.favicon.png" />
+<style>
+:root {
+	--color-bg: white;
+	--color-fg: #0c6032;
+}
+* {
+	box-sizing: border-box;
+}
+body {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-family: Roboto,Arial,Sans-Serif;
+
+	background-color: var(--color-bg);
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	height: 100%;
+	padding: 1em;
+}
+header {
+	background-color: black;
+	color: var(--color-fg);
+	background-size: 800px;
+	background-repeat:repeat-x;
+	background-position:center bottom;
+	padding-bottom: 10px;
+}
+.title, .content {
+	margin: 0 auto;
+	padding: 1em 0;
+}
+.title {
+	display: flex; flex-direction: row; align-items: center; justify-content: space-between;
+}
+.title .logo {
+	width: 3em;
+}
+.title .logo>img {
+	width: 3em;
+	border-radius: 10000px;
+	padding: 0.4em;
+	background-color: #ffe;
+}
+.content {
+	line-height: 1.6em;
+	color: var(--color-bg);
+}
+.countdown-frame {
+	/*background-color: rgba(255,255,255,0.9);*/
+	background-color: #ba7e43;
+	padding: 1em;
+
+	font-size: 1.2em;
+
+	border: 1px solid var(--color-bg);
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	box-sizing: border-box;
+	position: relative;
+}
+.countdown-frame .close-button {
+	position: absolute;
+	top: 0.3em;
+	right: 0.3em;
+	width: 1em;
+	height: 1em;
+	cursor: pointer;
+
+	transition: top 0.6s, bottom 0.6s;
+
+	display: none;
+}
+.countdown-frame.hide {
+	top: 110vh;
+	bottom: -200vh;
+}
+.countdown-frame svg {
+	width: 1em;
+	height: 1em;
+}
+.countdown-frame svg>g {
+	stroke: #999;
+}
+.content .images {
+	margin: 1em 0;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+@media screen and (max-width: 846px) {
+.content .images {
+	flex-direction: column;
+	margin-top: 2em;
+}
+}
+@media screen and (max-width: 488px) {
+.content .images img {
+	width: 330px;
+	/*transform: scale(60%);*/
+}
+}
+main {
+	/*max-width: 846px;*/
+	margin: 0 auto;
+}
+
+.content .info {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	padding: 1em;
+	background-color: var(--color-bg);
+	color: var(--color-fg);
+}
+.content .register {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	padding: 1em;
+	background-color: var(--color-fg);
+	color: var(--color-bg);
+}
+label {
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+input[type="submit"] {
+	margin: 1em 0;
+	background-color: #ba7e43;
+}
+
+.flash {
+	--color: #666;
+	--color-bg: white;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	margin: 1em 0;	
+
+	border: 1px solid var(--color);
+	color: var(--color);
+	background-color: var(--color-bg);
+}
+.flash>.title, .flash>.message {
+	padding: 1em;
+	margin: 0;
+}
+.flash>.title {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	border-bottom: 1px solid var(--color);
+	margin: 0;
+	padding: 0.6em 1em;
+	width: auto;
+
+	background-color: var(--color);
+	color: var(--color-bg);
+}
+.flash.Error {
+	--color: #933;
+}
+.flash.Info {
+	--color: #393;
+}
+.logo {
+    display: block;
+    padding: 15px 10px;
+    line-height: 60px;
+    height: 90px;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+a {
+    color: #343434;
+    transition: color .2s;
+}
+.txt {
+	color: black;
+	text-align: left;
+}
+table{
+
+	border-width: 10px;
+    border-spacing: 20px;
+    /*border-style: outset;*/
+    border-color: gray;
+    border-collapse: separate;
+}
+
+td.top {
+	text-align: left;
+	white-space: nowrap;
+}
+td.bott {
+	text-align: left;
+	width: 100px;
+    vertical-align: top;
+}
+th {
+	text-align: left;
+}
+#midheader{
+	padding-left: 35px;
+	font-size: larger;
+}
+#bmidheader{
+	padding-left: 35px;
+	font-size: large;
+}
+#bmidheader2{
+	padding-left: 35px;
+	font-size: larger;
+}
+.content{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: black;
+}
+main {
+	color: black;
+}
+.talkheader {
+    font-size: 14px;
+    text-align: center;
+    font-family: "Open Sans";
+    font-weight: 800;
+    font-style: normal;
+}
+table {
+	max-width: 60%;
+}
+.wide{
+    width: 90vw;
+}
+.narrow{
+    width: 150px;
+}
+.details {
+	display: flex;
+	flex-direction: column;
+}
+.row{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.cell {
+	display: flex;
+	flex-direction: column;
+	max-width: 500px;
+	padding: 5px;
+}
+
+.b1 {
+	background-color: burlywood;
+}
+.b2 {
+	background-color:olive;
+}
+.b3 {
+	background-color:tomato;
+}
+
+</style>
+</head>
+<body>
+    <main>
+        <div class="content">
+			<img src="img/Logo.png" style="height:200px;width:200px" alt="Home">
+			<br/>
+			<div id="midheader">ETSA 2022 - Sat 11 Jun</div>
+			<br/>
+			<div id="bmidheader2">You will be able to join the Opening Plenary from 12:45!</div>
+			<br/>
+			<div class="details">
+				<div class="row">
+					<div class="cell">1:00pm - 1:20pm</div>
+					<div class="cell">Opening Plenary</div>
+				</div>
+				<div class="row b1">
+					<div class="cell">1:30pm - 2:20pm</div><div class="cell">Breakout 1</div>
+					<div class="cell">Room 1</div>
+					<div class="cell">Room 2</div>
+					<div class="cell">Room 3</div>
+					<!--div class="cell">Room 4</div-->
+				</div>
+				<div class="row b2"><div class="cell">2:30pm - 3:20pm</div><div class="cell">Breakout 2</div>
+					<div class="cell">Room 1</div>
+					<div class="cell">Room 2</div>
+					<div class="cell">Room 3</div>
+					<!--div class="cell">Room 4</div-->
+				</div>
+				<div class="row b3"><div class="cell">3:30pm - 4:20pm</div><div class="cell">Breakout 3</div>
+					<div class="cell">Room 1</div>
+					<div class="cell">Room 2</div>
+					<div class="cell">Room 3</div>
+					<!--div class="cell">Room 4</div-->
+				</div>
+				<div class="row"><div class="cell">4:30pm - 5:00pm</div><div class="cell">Closing with Reflections and Giveaways</a></div></div>
+				<div class="row"><div class="cell">&nbsp;</div><div class="cell">&nbsp;</div></div>
+			</div>
+
+			<div class="details">
+				<div class="row b1">
+					<div class="cell">Room 1 : 1:30pm - 2:20pm <h2 class="talkheader">Using Google Forms and Slides to Bring Data Science into Any Classroom</h2>
+						Gone are the days when data science was just the concern of a few computer scientists and big data experts. In 2022 and beyond, everyone needs to be able to work with data. The sooner we expose our learners to data, the more prepared they will be for the many evolving careers and jobs that depend on the skills required to survive and thrive in our increasingly data-driven world. This workshop will introduce educators to free and accessible tools that can expose learners in any grade to the fundamentals of data science. Using Google Forms to collect, analyse and review data, and using Google Slides to visualise and represent data, this workshop will give all teachers the opportunity to bring data science to your learners.
+						<h5>Presenter: Siobhan Thatcher</h5>
+					</div>
+					<div class="cell">Room 2 : 1:30pm - 2:20pm 
+						<h2 class="talkheader">A Metacognition Approach to Teaching in the 21st Century</h2>                            
+						Come join me for a mind blowing experience. Thinking about thinking. That moment where you step back from whatever you are doing and assess: How  is my strategy working? What could I do to improve my progress? Metacognition is a skill that promotes advanced learning and thinking. As a teacher it is an important tool to use in the classroom. In this workshop we will look at the three phases of metacognition and how to implement them in the classroom. Together we will watch a short and engaging video on metacognition. We will also interact actively and see how metacognition can be applied in the different subjects.
+						<h5>Presenter: Maimoonah Gori</h5>
+					</div>
+					<div class="cell">Room 3 : 1:30pm - 2:20pm
+						<h2 class="talkheader">Creating a Culture of Reading with Young Learners</h2>
+						Instilling a love of reading early gives a child a good start in growing their vocabulary and building independence and self-confidence. By integrating Shine Literacy’s Storytime resources into the reading you already do, you can bring the love of reading into your classroom, helping to put your youngest learners on a path to literacy. The data-free resources and strategies that we will discuss will step through how you can work with both students as well as provide options for parents to continue reading at home. Books in the home are the single biggest indicator of academic success – surpassing income, parents’ education, family composition and all other factors.  You will have a chance to experience Storytime and make plans to integrate Storytime’s early grade reading online books for group-guided reading sessions.
+						<h5>Presenter: Claudia Stanfield</h5>                            
+					</div>
+				</div>
+				<div class="row b2">
+					<div class="cell">Room 1 : 2:30pm - 3:20pm 
+						<h2 class="talkheader">Using Microsoft 365, Teams and Other Free Tools for Transformational Teaching and Learning</h2>
+						It is so easy for us teachers to fall into transmission mode when we are busy and have been teaching similar content for years. With the demands in the workplace for more creativity, problem solving and critical thinking skills, together with the availability of technology, we have the opportunity to transform our teaching. This workshop will introduce teachers to the Microsoft 365 tools, Teams and other free tools for more transformational teaching and learning using reflection, discussion, feedback, evaluation, and collaboration.
+						<h5>Presenter: Julie Flanegan</h5>
+					</div>
+					<div class="cell">Room 2 : 2:30pm - 3:20pm 
+						<h2 class="talkheader">Getting Googly - Tips, Tricks and Hints to Optimize your Workflow</h2>
+						In this workshop we will look at how Google can help you organise your working life. From minutes and meetings, to monitoring students’ work and beyond, Google Workspace for Education can help you become more efficient (or just more WOW!!) Free and used by teachers around the world, come learn features of Google you never knew existed and add to your effectiveness, productivity, and creativity with your learners and colleagues.
+						<h5>Presenter: Anthony Egbers</h5>
+					</div>
+					<div class="cell">Room 3 : 2:30pm - 3:20pm 
+						<h2 class="talkheader">Designing with Desmos: Meaningful Technology for Math Teachers</h2>
+						Math teachers, we know there is nothing as valuable as seeing student work as we seek to understand their thinking, identify misconceptions, and support their understanding of concepts.  Desmos is a digital tool designed with math teachers in mind.  It gives us both holistic and individual data on the class and students, and its features are instrumental in giving students the kind of mathematical ‘workspace’ they easily can use online. In this session, we will explore how Desmos allows for students to show their thinking (in multiple ways), can be used to foster collaboration and shared learning, provides in-the-moment data for teachers, and much more! This workshop is designed for math teachers of learners of all ages!  Please join me for a collaborative, interactive experience – I am looking forward to learning alongside you!
+						<h5>Presenter: Lucy Smith</h5>
+					</div>
+				</div>
+				<div class="row b3">
+					<div class="cell">Room 1 : 3:30pm - 4:20pm
+						<h2 class="talkheader">Creating Fun and Effective Quizzes with Kahoot and Quizizz</h2>
+						This workshop focuses on maximizing the use of strong apps and websites in order to ensure that you find and use the best applications for your classroom. All the apps and sites we will explore together have been tried and tested and considered extremely effective by a vast number of teachers around the world. Most apps do not run effectively and efficiently on their own, but benefit most from a teacher who guides their use resulting in highly successful outcomes. In this workshop, teachers will be able to easily design lessons that utilize apps both in the school day as well as for homework and even test prep.
+						<h5>Presenter: Kevin Baloyi</h5>
+					</div>
+					<div class="cell">Room 2 : 3:30pm - 4:20pm 
+						<h2 class="talkheader">Socio-Emotional Learning Tools and Tips for Educators and Learners</h2>
+						In this workshop, we will be looking at socio-emotional learning (SEL) and how we can use apps and digital tools to integrate it into our classrooms, across learning areas. Recently, a lot of South Africa classrooms have been affected by devastating events which have impacted both the staff and the learners in many schools. Teachers have been forced into positions of dealing with the trauma many of the students have gone through and this session covers how we can use SEL strategies to support our learners while creating emotionally safe classroom environments. We will be looking at tools such as Harmony, SuperBetter and Calm to help teach some of the key principles behind SEL. We will also be looking at creative ways you can incorporate SEL into any classroom.
+						<h5>Presenter: Gugu Radebe</h5>
+					</div>
+					<div class="cell">Room 3 : 3:30pm - 4:20pm 
+						<h2 class="talkheader">Customizing Teaching Materials: Creating Your Own eBooks for Reading and Instruction</h2>
+						Creating content, customized for your learners and classroom has never been easier! We will explore a free app called Book Creator that allows us to make interactive storybooks, comic adventures, instructional materials, student work portfolios, research journals, poetry books, science reports, and more! Combine text, images, audio and video to engage your learners and make learning accessible to a wide range of learning styles by bringing multi-modality into your content and infusing creativity throughout your curriculum. In addition to creating instructional materials yourself by making ebooks, you can motivate learners by providing a platform for  reading, writing, researching and creating as they become published authors!
+						<h5>Presenter: Karen Kirsch Page (K2)</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+</main>
+</body>
+</html>

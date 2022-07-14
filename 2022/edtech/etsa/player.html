@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<title>EdTech Summit Africa #datafree</title>	
+<!--     <link href="/js/lib/video.js/video-js.min.css" rel="stylesheet">
+    <script src="/js/lib/video.js/video.min.js"></script>
+ -->	<script src="/js/lib/jquery/jquery.min.js"></script>
+	<script src="/js/lib/strophe.js/strophe.umd.min.js"></script>
+	<script src="/js/lib/strophe-disco/strophe.disco.js"></script>
+	<script src="/js/lib/jitsi-meet/lib-jitsi-meet.min.js"></script>
+	<script src="/js/lib/moment.js/moment.min.js"></script>
+	<!-- <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script> -->
+	<link rel="stylesheet" href="/css/all.css?now={{now}}">
+    <link rel="icon" type="image/png" href="/img/veedo.favicon.png" />	
+{{with .PollRobot -}}
+<script data-instance="Audience" data-url="https://{{.}}" data-channel="" src="https://{{.}}/poll/js/all.js"></script>{{end}}
+<style>
+:root {
+	--color-bg: #0C7EA5;
+	--color-fg: white;
+}
+</style>
+</head>
+<body class="veedo-conference-waiting">
+{{if .StartDate}}
+<div data-instance="Countdown" data-start="{{.StartDate}}"> </div>
+{{end}}
+<!-- <div id="player-display" style="display: none;"><div style="text-align: center;">Please send your questions to our Twitter account :: <a href="https://twitter.com/WomenOfZA" target="_blank">@WomenOfZA</a></div></div> -->
+<main id="PlayerChat" stream-key="{{.Key}}" data-height-resize="100" xdata-display-id="player-display"
+	data-waiting="id_of_waiting_message"
+	data-config="veedoConfig"
+	>
+</main>
+<script src="/js/veedoplayer.js"></script>
+<script src="/js/all.js?now={{now}}"></script>
+<script>
+var veedoConfig = new PlayerChatConfig({{with .AudienceJs}}{{. | js}}{{end}});
+
+var roomName = {{.Key}};
+{{/* subdomain must have a trailing dot if non-empty */ -}}
+var subdomain = {{.Subdomain}}; 
+{{/* domane is purposefully mispelt - proper spelling seems to overwrite some
+// other global in chrome*/ -}}
+var domane = {{.Domain}};
+window.DisableVeedoPlayer=true;
+</script>
+</body>
+</html>
