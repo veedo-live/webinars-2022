@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSIR NSW2022 #datafree</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="600" >
+    <link rel="icon" type="image/png" href="/img/veedo.favicon.png" />
+<style>
+:root {
+	--color-bg: #01366a00;
+	--color-fg: white;
+}
+* {
+	box-sizing: border-box;
+}
+body {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-family: Roboto,Arial,Sans-Serif;
+
+	background-color: var(--color-bg);
+	background-image: url("img/BackgroundCSIR.jpg");
+	background-size: 99%;
+
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	height: 100%;
+	padding: 1em;
+}
+header {
+	background-color: black;
+	color: var(--color-fg);
+	background-size: 800px;
+	background-repeat:repeat-x;
+	background-position:center bottom;
+	padding-bottom: 10px;
+}
+.title, .content {
+	margin: 0 auto;
+	padding: 1em 0;
+}
+.title {
+	display: flex; flex-direction: row; align-items: center; justify-content: space-between;
+}
+.title .logo {
+	width: 3em;
+}
+.title .logo>img {
+	width: 3em;
+	border-radius: 10000px;
+	padding: 0.4em;
+	background-color: #ffe;
+}
+.content {
+	line-height: 1.6em;
+	color: var(--color-bg);
+}
+.countdown-frame {
+	/*background-color: rgba(255,255,255,0.9);*/
+	/*background-color: #ba7e43;*/
+	padding: 1em;
+
+	font-size: 1.2em;
+
+	border: 1px solid var(--color-bg);
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	box-sizing: border-box;
+	position: relative;
+	padding-top: 400px;
+}
+.countdown-frame .close-button {
+	position: absolute;
+	top: 0.3em;
+	right: 0.3em;
+	width: 1em;
+	height: 1em;
+	cursor: pointer;
+
+	transition: top 0.6s, bottom 0.6s;
+
+	display: none;
+}
+.countdown-frame.hide {
+	top: 110vh;
+	bottom: -200vh;
+}
+.countdown-frame svg {
+	width: 1em;
+	height: 1em;
+}
+.countdown-frame svg>g {
+	stroke: #999;
+}
+.content .images {
+	margin: 1em 0;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+@media screen and (max-width: 846px) {
+.content .images {
+	flex-direction: column;
+	margin-top: 2em;
+}
+}
+@media screen and (max-width: 488px) {
+.content .images img {
+	width: 330px;
+	/*transform: scale(60%);*/
+}
+}
+main {
+	/*max-width: 846px;*/
+	margin: 0 auto;
+}
+
+.content .info {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	padding: 1em;
+	background-color: var(--color-bg);
+	color: var(--color-fg);
+}
+.content .register {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	padding: 1em;
+	background-color: var(--color-fg);
+	color: var(--color-bg);
+}
+label {
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+input[type="submit"] {
+	margin: 1em 0;
+	background-color: #ba7e43;
+}
+
+.flash {
+	--color: #666;
+	--color-bg: white;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	margin: 1em 0;	
+
+	border: 1px solid var(--color);
+	color: var(--color);
+	background-color: var(--color-bg);
+}
+.flash>.title, .flash>.message {
+	padding: 1em;
+	margin: 0;
+}
+.flash>.title {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	border-bottom: 1px solid var(--color);
+	margin: 0;
+	padding: 0.6em 1em;
+	width: auto;
+
+	background-color: var(--color);
+	color: var(--color-bg);
+}
+.flash.Error {
+	--color: #933;
+}
+.flash.Info {
+	--color: #393;
+}
+.logo {
+    display: block;
+    padding: 15px 10px;
+    line-height: 60px;
+    height: 90px;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+a {
+    color: #343434;
+    transition: color .2s;
+}
+.txt {
+	color: black;
+	text-align: left;
+}
+table{
+
+	border-width: 10px;
+    border-spacing: 20px;
+    /*border-style: outset;*/
+    border-color: gray;
+    border-collapse: separate;
+}
+
+td.top {
+	text-align: left;
+	white-space: nowrap;
+}
+td.bott {
+	text-align: left;
+	width: 100px;
+    vertical-align: top;
+}
+th {
+	text-align: left;
+}
+#midheader{
+	padding-left: 35px;
+	font-size: larger;
+}
+#bmidheader{
+	padding-left: 35px;
+	font-size: large;
+}
+#bmidheader2{
+	padding-left: 35px;
+	font-size: larger;
+}
+.content{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: black;
+}
+main {
+	color: black;
+}
+.talkheader {
+    font-size: 14px;
+    text-align: center;
+    font-family: "Open Sans";
+    font-weight: 800;
+    font-style: normal;
+}
+table {
+	max-width: 60%;
+}
+.wide{
+    width: 90vw;
+}
+.narrow{
+    width: 150px;
+}
+.details {
+	display: flex;
+	flex-direction: column;
+}
+.row{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.cell {
+	display: flex;
+	flex-direction: column;
+	max-width: 500px;
+	padding: 5px;
+}
+
+.b1 {
+	background-color: burlywood;
+}
+.b2 {
+	background-color:olive;
+}
+.b3 {
+	background-color:tomato;
+}
+
+</style>
+<script src="/js/all.js"></script>
+</head>
+<body>
+    <main>
+        <div class="content">
+			<div 
+				class="Countdown" 
+				data-instance="Countdown" 
+				data-start="1 Aug 2022 08:00:00 +02:00"
+				data-key="csir" >
+			</div>
+
+		</div>
+</main>
+</body>
+</html>
