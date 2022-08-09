@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>KZN Legislature 2022 {{.Title}} #datafree</title>
+    <title>KZN Legislature 2022 {{.AudienceTitle}} #datafree</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="/img/veedo.favicon.png" />
 <style>
@@ -104,9 +104,12 @@ header {
 			<div 
 				class="Countdown" 
 				data-instance="Countdown" 
-				data-start=""
+				data-start="{{.Audience.webinar_start}}"
+				data-end="{{.Audience.webinar_end}}"
+				data-title="{{.AudienceTitle}}"
 				xdata-start="29 Jun 2022 09:45:00 +02:00"
-				xdata-key="2022lgbtqiasymposium" >
+				xdata-key="2022lgbtqiasymposium" 
+				>
 				>				
 			</div>
 			<p> </p>
