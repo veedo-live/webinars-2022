@@ -1,0 +1,116 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KZN Legislature 2022 {{.Title}} #datafree</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/img/veedo.favicon.png" />
+<style>
+:root {
+	--color-bg: #553f37;
+	--color-fg: #fff;
+}
+body {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-family: Roboto,Arial,Sans-Serif;
+}
+header {
+	background-color: var(--color-bg);
+	color: var(--color-fg);
+	background-image:url("Border3.png");
+	background-size: 800px;
+	background-repeat:repeat-x;
+	background-position:center bottom;
+	padding-bottom: 10px;
+}
+.title, .content {
+	width: 90%;
+	margin: 0 auto;
+	padding: 1em 0;
+}
+.title {
+	display: flex; flex-direction: row; align-items: center; justify-content: space-between;
+}
+.title .logo {
+	width: 3em;
+}
+.title .logo>img {
+	width: 3em;
+	border-radius: 10000px;
+	padding: 0.4em;
+	background-color: #ffe;
+}
+.content {
+	line-height: 1.6em;
+	color: var(--color-bg);
+}
+.countdown-frame {
+	background-color: rgba(255,255,255,0.9);
+	padding: 1em;
+
+	font-size: 1.2em;
+
+	border: 1px solid var(--color-bg);
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	box-sizing: border-box;
+	position: relative;
+}
+.countdown-frame .close-button {
+	position: absolute;
+	top: 0.3em;
+	right: 0.3em;
+	width: 1em;
+	height: 1em;
+	cursor: pointer;
+
+	transition: top 0.6s, bottom 0.6s;
+
+	display: none;
+}
+.countdown-frame.hide {
+	top: 110vh;
+	bottom: -200vh;
+}
+.countdown-frame svg {
+	width: 1em;
+	height: 1em;
+}
+.countdown-frame svg>g {
+	stroke: #999;
+}
+
+</style>
+<script src="/js/all.js"></script>
+</head>
+<body>
+	<header>
+		<div class="title"><h1>KZN Legislature 2022 {{.Title}}#datafree</h1>
+		<div class="logo"><img src="kzn-logo-square.png" alt="KZN Legislature Logo"/></div>
+		</div>
+	</header>
+	<div class="border">
+	</div>
+	<main>
+		<div class="content">
+			<div 
+				class="Countdown" 
+				data-instance="Countdown" 
+				data-start=""
+				xdata-start="29 Jun 2022 09:45:00 +02:00"
+				xdata-key="2022lgbtqiasymposium" >
+				>				
+			</div>
+			<p> </p>
+		</div>
+	</main>
+</body>
+</html>
