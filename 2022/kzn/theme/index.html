@@ -121,5 +121,9 @@ header {
 			<p> </p>
 		</div>
 	</main>
+	<script>console.log("kzn/2022/theme index.html");</script>
+	<veedo-room-monitor> </veedo-room-monitor>
+	<veedo-room-keeper data-room="{{.StreamKey}}" keeper-url="https://{{.RoomKeeper}}/"> </veedo-room-keeper>
+	<veedo-send-to-viewer {{with .StreamKey}}data-key="{{.}}"{{ end }}> </veedo-send-to-viewer>
 </body>
 </html>
